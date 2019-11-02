@@ -13,10 +13,21 @@ The Second dataset is testing dataset consisting of 180 images. Consisting two r
 
 The training datset and testing dataset were created by ramdomly selecting images from 6/13/2017 and 8/14/2017 images.
 
+Preprocessing images:
+
+RGB_noemalize.m
+  This file normalize images colors to smooth images and the smoothed images increased accuracy.
+
 Function files:
+  1, read_images_to_pkl.py
+    This file read images from folder and converted images from RGB to black and white and save all the images in one pkl file.
 
   1, load train data.py
-    This files reads images files and 
+    This files reads images pkl file and return training data, training data labels in torch format
+    
+  2, load test data.py
+    This files reads images pkl file and return training data, training data labels in torch format
+    
 
 
 1, run the CNN_main.py first. The file includes the model. read data and train the model by training data.
