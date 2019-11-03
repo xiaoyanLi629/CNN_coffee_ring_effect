@@ -1,0 +1,4 @@
+Ten excel files included in this folder
+Each file includes the miclassified image number code. For examplem, 11, means the 11th image in testing folder images, 11.jpg, was misclassified by this folder.
+0 measn there was no images misclassified.
+The last 200 models misclassified information were stored in each csv file.
