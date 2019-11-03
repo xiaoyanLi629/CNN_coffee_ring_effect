@@ -64,9 +64,33 @@ Result analysis files:
 2, Each_class_accuracy_plot.py
   This file reads all 10 models accuracy results and plots accuracy of each class (six water samples classes in total) of the last 100 models of total ten runs.
   Output file is Test accuracy of each class.jpg
-
+  
+3, classification_result_analysis.py
+  This file reads all 10 models accuracy results and plots three figures.
+   1, accuracy of each class (six water samples classes in total) of the last 100 models of total ten runs. This is the same as file Each_class_accuracy_plot.py
+   Output file is Test accuracy of each class.jpg
+   2, accuracy of each image of total ten runs and last 100 models. Ordered in class number.
+   Output file is Mis-classification percentage color class.jpg
+   3, accuracy of each image of total ten runs and last 100 models zero mis-classification images. Ordered in class number.
+   Output file is Mis-classification percentage color class without zero mis-classification.jpg
+   
+4, testing_accP_plot.py
+  This file reads accuracy result csv file of each run. Then plots the accuracy of each run of the last 200 iteration models.
+  Output file is Mis-classification percentage.jpg
+  
+5, mian_test.py
+  This file reads model weighs file and test testing files by the model. Output confusion matrix of the testing images.
+  10 confusion matrix file combined together by online kit
 Files running flow:
 
-1, run the CNN_main.py first. The file includes the model. read data and train the model by training data.
+1, run the CNN_main.py first. The file includes the model. read data and train the model by training data. Save 10 runs.
 
-2, run t
+2, run Each_run_accuracy_box_plot.py
+
+3, run Each_class_accuracy_plot.py
+
+4, classification_result_analysis.py
+
+5, testing_accP_plot.py
+
+6, mian_test.py
