@@ -1,0 +1,2 @@
+10 models created. Each model weights were saved in one pkl file. Each model could be read to analyze by loadinf file.
+For each run, last 200 models accuracy, misclassificatioon results were saved but only the last model weights was saved.
