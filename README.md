@@ -2,6 +2,9 @@
 This project uses CNN model to analyze water samples of coffee ring effect
 
 Dataset:
+
+The csv file cluster_chemistry_result.csv is the water samples cluster analysis result.
+
 Two set of images collected from same 30 water samples on two different days.
 First set images is 150 images consisting of 5 replicates of 30 water samples on 6/13/2017.
 Second set of images is 150 images consisting of 5 replicates of 30 water samples on 8/14/2017.
