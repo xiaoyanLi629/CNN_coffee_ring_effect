@@ -29,30 +29,31 @@ RGB_noemalize.m
     
 Function files:
 Under CNN_main.py file
-  1, train_folder.py
-    Provide the training folder name
+
+1, train_folder.py
+  Provide the training folder name
     
-  2, test_folder.py
+2, test_folder.py
     Provide the testing folder name
     
-  3, load_train_data.py
-    This files reads images pkl file and return training data, training data labels in torch format
+3, load_train_data.py
+  This files reads images pkl file and return training data, training data labels in torch format
     
-  4, load_test_data.py
-    This files reads images pkl file and return training data, training data labels in torch format
+4, load_test_data.py
+  This files reads images pkl file and return training data, training data labels in torch format
  
-  5, test_images.py
-    This file reads images data and use CNN model to predict the results and compare the predicted results with its true label
-    This file returns tested samples accuracy, prediction class and total loss
+5, test_images.py
+  This file reads images data and use CNN model to predict the results and compare the predicted results with its true label
+  This file returns tested samples accuracy, prediction class and total loss
     
-  7, model_result.py
-    Read model name, images true class label, images number, images predicted class and compare the predicted class and true class
-    Return a list of misclssified images file code
+7, model_result.py
+  Read model name, images true class label, images number, images predicted class and compare the predicted class and true class
+  Return a list of misclssified images file code
     
-  8, missclassify_class.py
-    Read images true class label, images number, images predicted class and compare the predicted class and true class
-    Return a list of misclssified images file code
-    This is part of function 7
+8, missclassify_class.py
+  Read images true class label, images number, images predicted class and compare the predicted class and true class
+  Return a list of misclssified images file code
+  This is part of function 7
 
 1, run the CNN_main.py first. The file includes the model. read data and train the model by training data.
 
