@@ -55,5 +55,18 @@ Under CNN_main.py file
   Return a list of misclssified images file code
   This is part of function 7
 
+Result analysis files:
+
+1, Each_run_accuracy_box_plot.py
+  This files reads all 10 models accuracy results and plots each models' last 100 accuracy results with scale bars
+  Output figure file is Test accuracy figure.jpg
+  
+2, Each_class_accuracy_plot.py
+  This file reads all 10 models accuracy results and plots accuracy of each class (six water samples classes in total) of the last 100 models of total ten runs.
+  Output file is Test accuracy of each class.jpg
+
+Files running flow:
+
 1, run the CNN_main.py first. The file includes the model. read data and train the model by training data.
 
+2, run t
