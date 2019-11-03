@@ -23,10 +23,11 @@ RGB_noemalize.m
   training_raw folder images were normalized to training folder.
   testing_raw folder images were normalized to testing folder.
 
-Function files:
-  1, read_images_to_pkl.py
+1, read_images_to_pkl.py
   Independent file
     This file read images from folder and converted images from RGB to black and white and save all the images in one pkl file.
+    
+Function files:
 Under CNN_main.py file
   1, train_folder.py
     Provide the training folder name
