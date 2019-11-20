@@ -1,96 +1,84 @@
 # CNN_coffee_ring_effect
-This project uses CNN model to analyze water samples of coffee ring effect
+This project uses a CNN model to analyze images of tap water fingerprints, assigning them to groups with similar water chemistry.
 
 Dataset:
 
-The csv file cluster_chemistry_result.csv is the water samples cluster analysis result.
+cluster_chemistry_result.csv 
+  Thirty tap water samples were collected from different cities. The water chemistry in each tap water sample was evaluated using standard methods. Cluster anlaysis was used to assign tap water samples into groups with similar water chemistry. The csv file cluster_chemistry_result.csv is the result of the cluster analysis, showing which tap water samples have similar water chemistry. 
 
-Two set of images collected from same 30 water samples on two different days.
-First set images is 150 images consisting of 5 replicates of 30 water samples on 6/13/2017.
-Second set of images is 150 images consisting of 5 replicates of 30 water samples on 8/14/2017.
-Two sets of datasets created by these collected 300 images.
 
-The first dataset is training dataset (training_raw folder) consisting of 180 images. Consisting three replicates of each water sample images in 6/13/2017 dataset and three replicates of each water sample images in 6/13/2019 dataset.
-
-The Second dataset is testing dataset (testing_raw folder) consisting of 180 images. Consisting two replicates of each water sample images in 8/14/2017 dataset and two replicates of each water sample images in 8/14/2017 dataset.
-
-The training datset and testing dataset were created by ramdomly selecting images from 6/13/2017 and 8/14/2017 images.
-
-Preprocessing images:
-
-RGB_noemalize.m
-  This file normalize images colors to smooth images and the smoothed images increased accuracy.
-  training_raw folder images were normalized to training folder.
-  testing_raw folder images were normalized to testing folder.
-
-1, read_images_to_pkl.py
-  Independent file
-    This file read images from folder and converted images from RGB to black and white and save all the images in one pkl file.
-    
-Function files:
-Under CNN_main.py file
-
-1, train_folder.py
-  Provide the training folder name
-    
-2, test_folder.py
-    Provide the testing folder name
-    
-3, load_train_data.py
-  This files reads images pkl file and return training data, training data labels in torch format
-    
-4, load_test_data.py
-  This files reads images pkl file and return training data, training data labels in torch format
+Raw image files (training_raw and testing_raw folders)
+   Each tap water sample was dried on an aluminum slide, utilizing the coffee ring effect. Images were collected of the coffee-ring pattern for each tap water sample. Two set of images were collected from the thirty water samples on two different days. The first set images consisted of 5 replicates of the 30 water samples, for a total of 150 images. The second set of images consisted of 5 replicates of the 30 water samples collected on a second day, for a total of 150 more images. Overall there were 300 collected images. These 300 images were alloted into a training dataset and a testing dataset. 
+   
+   The training datset (training_raw folder) and testing dataset (testing_raw folder) were created by randomly selecting an equal number of images for each sample from the images analyzed on the first day and from the images analyzed on the second day. The training dataset contained 180 images, including three replicates from each tap water sample from the images collected on the first day and three replicates from each tap water sample collected on the second day. The testing dataset contained of 180 images, including two replicates from each tap water sample from the images collected on the first day and two replicates from each tap water sample collected on the second day. 
  
-5, test_images.py
-  This file reads images data and use CNN model to predict the results and compare the predicted results with its true label
-  This file returns tested samples accuracy, prediction class and total loss
+
+Preprocessed images:
+
+    RGB_noemalize.m
+      This code normalizes image colors to smooth images.
+      training_raw folder images were normalized and saved to the training folder.
+      testing_raw folder images were normalized and saved to the testing folder.
+
+    read_images_to_pkl.py
+      This file reads images from the folder, 
+      converts images from RGB to black and white, and 
+      saves all the images in one pkl  file.
     
-7, model_result.py
-  Read model name, images true class label, images number, images predicted class and compare the predicted class and true class
-  Return a list of misclssified images file code
+
+Function files can be found under the CNN_main.py file
+
+  1) train_folder.py
+      Provides the training folder name.
     
-8, missclassify_class.py
-  Read images true class label, images number, images predicted class and compare the predicted class and true class
-  Return a list of misclssified images file code
-  This is part of function 7
+  2) test_folder.py
+      Provides the testing folder name
+
+  3) load_train_data.py
+      This file reads the pkl file of the training images and returns training data and training data labels in torch format.
+
+  4) load_test_data.py
+      This file reads the pkl file of the testing images and returns the testing data and testing data labels in torch format.
+
+  5) test_images.py
+      This file reads the images, uses the CNN model to classify the images, and compares the CNN classification with the group assigned by cluster analysis of the water chemistry data. This file returns the CNN model classification, the accuracy of the CNN model in classifying the images into the group that was assigned by cluster analysis of the water chemistry data, and the total loss. 
+
+  6) model_result.py
+      This file reads the model name, the classification assigned by cluser analysis of the water chemistry data, the image identification number, and the classification assigned by the CNN model. It also compares the classification by CNN vs cluster anlaysis of water chemistry. The file returns a list of misclassified images.
+
+  7) missclassify_class.py
+      This file reads the classification assigned by the cluster analysis of water chemistry data, the image identification number, and the classification assigned by the CNN model. It also compares the classification by CNN vs cluster anlaysis of water chemistry. The file returns a list of misclassified images. This is part of function 6.
+
 
 Result analysis files:
 
-1, Each_run_accuracy_box_plot.py
-  This files reads all 10 models accuracy results and plots each models' last 100 accuracy results with scale bars
-  Output figure file is Test accuracy figure.jpg
+1) Each_run_accuracy_box_plot.py
+    This file reads the accuracy results for 10 independently trained CNN models and plots each models' last 100 accuracy results with scale bars. The output figure file name is "Test accuracy figure.jpg"
   
-2, Each_class_accuracy_plot.py
-  This file reads all 10 models accuracy results and plots accuracy of each class (six water samples classes in total) of the last 100 models of total ten runs.
-  Output file is Test accuracy of each class.jpg
+2) Each_class_accuracy_plot.py
+  This file reads the accuracy results for 10 independently trained CNN models and plots the accuracy of each class for the last 100 models. The output file is named "Test accuracy of each class.jpg"
   
-3, classification_result_analysis.py
-  This file reads all 10 models accuracy results and plots three figures.
-   1, accuracy of each class (six water samples classes in total) of the last 100 models of total ten runs. This is the same as file Each_class_accuracy_plot.py
-   Output file is Test accuracy of each class.jpg
-   2, accuracy of each image of total ten runs and last 100 models. Ordered in class number.
-   Output file is Mis-classification percentage color class.jpg
-   3, accuracy of each image of total ten runs and last 100 models zero mis-classification images. Ordered in class number.
-   Output file is Mis-classification percentage color class without zero mis-classification.jpg
+3) classification_result_analysis.py
+    This file reads the accuracy results for 10 independently trained CNN models and plots three figures. First it plots the accuracy of the classification for each class for the last 100 models, using the same procedure as used in "Each_class_accuracy_plot.py". The output file is named "Test accuracy of each class.jpg". Second it plots the accuracy of the classification for each image for the last 100 models of 10 independently trained CNN models, ordered by class number. The output file is named "Mis-classification percentage color class.jpg". Third it plots the accuracy of the classification for the zero mis-classification images for the last 100 models of 10 independently trained CNN models, ordered by class number. The output file is named "Mis-classification percentage color class without zero mis-classification.jpg".
    
-4, testing_accP_plot.py
-  This file reads accuracy result csv file of each run. Then plots the accuracy of each run of the last 200 iteration models.
-  Output file is Mis-classification percentage.jpg
+4) testing_accP_plot.py
+    This file reads the accuracy result csv file of each run, and then plots the accuracy of each run for the last 200 iteration models. The output file is named "Mis-classification percentage.jpg".
   
-5, mian_test.py
-  This file reads model weighs file and test testing files by the model. Output confusion matrix of the testing images.
-  10 confusion matrix file combined together by online kit
-Files running flow:
+5) mian_test.py
+    This file reads the model weights file and testing files by the model. The output is a confusion matrix of the testing images. The confusion matrix file is combined together by an online kit.
 
-1, run the CNN_main.py first. The file includes the model. read data and train the model by training data. Save 10 runs.
 
-2, run Each_run_accuracy_box_plot.py
 
-3, run Each_class_accuracy_plot.py
+Work flow:
 
-4, classification_result_analysis.py
+1) Run the CNN_main.py first. The file includes the CNN model. Read the data and train the model using the training dataset. Save 10 runs.
 
-5, testing_accP_plot.py
+2) Run Each_run_accuracy_box_plot.py
 
-6, mian_test.py
+3) Run Each_class_accuracy_plot.py
+
+4) Run classification_result_analysis.py
+
+5) Run testing_accP_plot.py
+
+6) Run mian_test.py
