@@ -15,17 +15,17 @@ Raw image files (training_raw and testing_raw folders)
 
 Preprocessed images:
 
-    RGB_noemalize.m
-      This code normalizes image colors to smooth images.
-      training_raw folder images were normalized and saved to the training folder.
-      testing_raw folder images were normalized and saved to the testing folder.
-
-    read_images_to_pkl.py
-      This file reads images from the folder, 
-      converts images from RGB to black and white, and 
-      saves all the images in one pkl  file.
+  RGB_noemalize.m
+    This code normalizes image colors to smooth images. 
+    training_raw folder images were normalized and saved to the training folder. 
+    testing_raw folder images were normalized and saved to the testing folder.
+  
+  read_images_to_pkl.py
+    This file reads images from the folder, 
+    converts images from RGB to black and white, and 
+    saves all the images in one pkl file.
     
-
+    
 Function files can be found under the CNN_main.py file
 
   1) train_folder.py
