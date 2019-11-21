@@ -1,2 +1,1 @@
-10 models created. Each model weights were saved in one pkl file. Each model could be read to analyze by loadinf file.
-For each run, last 200 models accuracy, misclassificatioon results were saved but only the last model weights was saved.
+Ten independent CNN models were created. The weights for each model were saved in one pkl file. For each of the ten independent CNN models, the accuracy and the missclassification results were saved for the last 200 iterations of the model, but the weights were only saved for the last iteration. 
