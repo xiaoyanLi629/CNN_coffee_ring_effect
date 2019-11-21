@@ -1,1 +1,1 @@
-Each CSV file consists of last 200 models accuracy. Total 10 model created.
+Each CSV file contains the accuracy results for the last 200 itterations of ten independent CNN models.

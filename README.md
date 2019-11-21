@@ -64,7 +64,7 @@ Result analysis files:
 4) testing_acc_plot.py
     This file reads the accuracy result csv file of each run, and then plots the accuracy of each run for the last 200 iteration models. The output file is named "Mis-classification percentage.jpg".
   
-5) mian_test.py
+5) main_test.py
     This file reads the model weights file and testing files by the model. The output is a confusion matrix of the testing images. The confusion matrix file is combined together by an online kit.
 
 
@@ -81,4 +81,4 @@ Work flow:
 
 5) Run testing_acc_plot.py
 
-6) Run mian_test.py
+6) Run main_test.py

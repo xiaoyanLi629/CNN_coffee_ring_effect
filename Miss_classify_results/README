@@ -1,4 +1,1 @@
-Ten excel files included in this folder
-Each file includes the miclassified image number code. For examplem, 11, means the 11th image in testing folder images, 11.jpg, was misclassified by this folder.
-0 measn there was no images misclassified.
-The last 200 models misclassified information were stored in each csv file.
+Ten csv files are included in this folder, one file for each of the ten independently run CNN models. Each file includes the identification numbers for the misclassified images. For example, 11 means image number eleven in the testing folder of images (11.jpg) was misclassified. 0 means there were no images misclassified. The misclassification information for the last 200 models within each one of the ten independent CNN models were stored in the csv file.
