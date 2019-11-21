@@ -10,7 +10,7 @@ cluster_chemistry_result.csv
 Raw image files (training_raw and testing_raw folders)
    Each tap water sample was dried on an aluminum slide, utilizing the coffee ring effect. Images were collected of the coffee-ring pattern for each tap water sample. Two set of images were collected from the thirty water samples on two different days. The first set images consisted of 5 replicates of the 30 water samples, for a total of 150 images. The second set of images consisted of 5 replicates of the 30 water samples collected on a second day, for a total of 150 more images. Overall there were 300 collected images. These 300 images were alloted into a training dataset and a testing dataset. 
    
-   The training datset (training_raw folder) and testing dataset (testing_raw folder) were created by randomly selecting an equal number of images for each sample from the images analyzed on the first day and from the images analyzed on the second day. The training dataset contained 180 images, including three replicates from each tap water sample from the images collected on the first day and three replicates from each tap water sample collected on the second day. The testing dataset contained of 180 images, including two replicates from each tap water sample from the images collected on the first day and two replicates from each tap water sample collected on the second day. 
+   The training datset (training_raw folder) and testing dataset (testing_raw folder) were created by randomly selecting an equal number of images for each sample from the images analyzed on the first day and from the images analyzed on the second day. The training dataset contained 180 images, including three replicates from each tap water sample from the images collected on the first day and three replicates from each tap water sample collected on the second day. The testing dataset contained of 120 images, including two replicates from each tap water sample from the images collected on the first day and two replicates from each tap water sample collected on the second day. 
  
 
 Preprocessed images:
@@ -61,7 +61,7 @@ Result analysis files:
 3) classification_result_analysis.py
     This file reads the accuracy results for 10 independently trained CNN models and plots three figures. First it plots the accuracy of the classification for each class for the last 100 models, using the same procedure as used in "Each_class_accuracy_plot.py". The output file is named "Test accuracy of each class.jpg". Second it plots the accuracy of the classification for each image for the last 100 models of 10 independently trained CNN models, ordered by class number. The output file is named "Mis-classification percentage color class.jpg". Third it plots the accuracy of the classification for the zero mis-classification images for the last 100 models of 10 independently trained CNN models, ordered by class number. The output file is named "Mis-classification percentage color class without zero mis-classification.jpg".
    
-4) testing_accP_plot.py
+4) testing_acc_plot.py
     This file reads the accuracy result csv file of each run, and then plots the accuracy of each run for the last 200 iteration models. The output file is named "Mis-classification percentage.jpg".
   
 5) mian_test.py
@@ -79,6 +79,6 @@ Work flow:
 
 4) Run classification_result_analysis.py
 
-5) Run testing_accP_plot.py
+5) Run testing_acc_plot.py
 
 6) Run mian_test.py
